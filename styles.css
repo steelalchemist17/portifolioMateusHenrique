@@ -1,0 +1,62 @@
+/* styles.css
+   CSS puro, sem frameworks.
+   Estilos simples, responsivos e com menu visível em todas as páginas.
+*/
+
+/* Reset/minimum */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#222; background: #f7f7f8; }
+
+/* Layout */
+.container { width: 90%; max-width: 980px; margin: 0 auto; padding: 1rem; }
+
+/* Header / nav */
+.site-header { background: #ffffff; border-bottom: 1px solid #e6e6e6; position: sticky; top: 0; z-index: 1000; }
+.header-inner { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:0.75rem 0; }
+.logo a { text-decoration:none; color:#111; font-size:1.25rem; font-weight:700; }
+.main-nav ul { list-style:none; display:flex; gap:0.5rem; align-items:center; }
+.main-nav a { display:block; padding:0.4rem 0.7rem; text-decoration:none; color:#333; border-radius:6px; }
+.main-nav a:hover, .main-nav a.active { background:#eef2ff; color:#1a3cae; }
+
+/* Mobile menu button */
+.mobile-menu { display:none; background:transparent; border:0; font-size:1.25rem; }
+
+/* Hero */
+.hero { padding:2rem 0; }
+.hero h2 { font-size:1.6rem; margin-bottom:0.5rem; }
+.callout { margin-top:0.75rem; font-style:italic; color:#444; }
+
+/* Features */
+.features { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin:1.25rem 0; }
+.content-card { background:#fff; padding:1rem; border-radius:10px; box-shadow: 0 1px 6px rgba(20,20,30,0.04); }
+
+/* Projects */
+.projects-grid { list-style:none; display:grid; gap:0.75rem; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); padding:0; }
+
+/* Timeline */
+.timeline { list-style:none; padding-left:0; }
+.timeline li { margin-bottom:0.75rem; }
+
+/* Form */
+form { display:flex; flex-direction:column; gap:0.5rem; }
+label { font-weight:600; font-size:0.95rem; }
+input[type="text"], input[type="email"], textarea {
+  padding:0.6rem; border:1px solid #ddd; border-radius:8px; font-size:0.95rem; width:100%;
+}
+.form-actions { display:flex; gap:0.5rem; margin-top:0.5rem; }
+button[type="submit"], .btn-secondary {
+  padding:0.6rem 0.9rem; border-radius:8px; border:0; cursor:pointer; font-weight:700;
+}
+button[type="submit"] { background:#1a3cae; color:white; }
+.btn-secondary { background:#eef0f6; color:#333; }
+
+/* Footer */
+.site-footer { margin-top:2rem; padding:1rem 0; text-align:center; color:#666; }
+
+/* Responsiveness */
+@media (max-width:720px){
+  .main-nav ul { display:none; position:absolute; right:1rem; top:60px; background:#fff; box-shadow:0 8px 30px rgba(20,20,30,0.08); border-radius:8px; flex-direction:column; padding:0.5rem; min-width:160px; }
+  .main-nav ul.show { display:flex; }
+  .mobile-menu { display:block; }
+  .header-inner { gap:0.5rem; }
+}
